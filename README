@@ -1,0 +1,46 @@
+# Contact Us Form Application
+
+I have developed a simple Contact Us Form application that enables users to submit their inquiries. This application performs input validation, stores submissions in a MySQL database, and sends email notifications using PHPMailer.
+
+## Setup Instructions
+
+1. **Clone the Repository:**
+   Start by cloning this repository to your local machine using the following command:
+    git clone https://github.com/your-username/contact-us-form.git
+
+
+2. **Create the Database:**
+Open your MySQL database management tool and create a new database named `contactus_form`, i created this because an already `contact_form` placed in my db you can create `contact_form`.
+
+3. **Import the Database Schema:**
+In the repository's root directory, locate the `contactus_form.sql` file. Import this SQL file into your `contactus_form` database. This step will create the necessary table structure.
+
+4. **Configure Database Connection:**
+Open the `process_form.php` file in a text editor. Locate the database connection details section and update them to match your configuration:
+```php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "contact_form";
+
+Configure SMTP for Email Sending:
+$phpmailer->Host = 'your-smtp';
+$phpmailer->SMTPAuth = true;
+$phpmailer->Port = 2525;
+$phpmailer->Username = 'your-mailtrap-username';
+$phpmailer->Password = 'your-mailtrap-password';
+
+Install PHPMailer Dependencies:
+    
+    composer install
+    composer require phpmailer/phpmailer
+
+After these Steps Run the Application:
+- Please open a web browser and access the URL of the contact_form.html file located in the repository. for mine "localhost/htdocs/mywebsite" Complete the contact form and submit it. The form data will be validated, stored in the database, and an email notification will be dispatched.
+
+Additional Notes:
+-The contact_form.html file contains the HTML structure of the form.
+-The style.css file holds the external CSS styles for the form's appearance.
+-The process_form.php file manages form submission, validation, database insertion, and email transmission.
+
+
